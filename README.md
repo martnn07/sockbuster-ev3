@@ -2,7 +2,7 @@
 
 **Asignatura:** Modelamiento de Soluciones Informáticas (INACAP)
 
-**Estudiante(s):** [Martín Trujillo]
+**Estudiante(s):** MARTÍN TRUJILLO
 
 **Sitio publicado:** https://martnn07.github.io/sockbuster-ev3/ 
 
