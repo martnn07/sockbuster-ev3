@@ -1,0 +1,16 @@
+digraph Desarrollo {
+  graph [rankdir=LR, fontname="Arial", bgcolor="white", label="Vista de desarrollo · Componentes reales", labelloc=t, fontsize=21, fontcolor="#23314d", pad=".3", nodesep=".4", ranksep=".8", splines=polyline];
+  node [shape=box, style="rounded,filled", color="#78839a", fillcolor="#f1f3f9", fontname="Arial", fontsize=13, margin=".2,.15"];
+  edge [color="#6e7d98", arrowsize=.8, penwidth=1.3];
+  index [label="«componente»\nindex.html\nInicio", fillcolor="#ffedf4"];
+  catalogo [label="«componente»\ncatalogo.html\nCatálogo", fillcolor="#ffedf4"];
+  diagramas [label="«componente»\ndiagramas.html\nArquitectura", fillcolor="#ffedf4"];
+  css [label="«componente»\ncss/estilos.css\nColores y diseño", fillcolor="#e9edff"];
+  datos [label="«componente»\njs/datos.js\nProductos iniciales", fillcolor="#fff0d5"];
+  tienda [label="«componente»\njs/catalogo.js\nFiltros, pedidos y reseñas", fillcolor="#fff0d5"];
+  svg [label="«componente»\ndiagramas/*.svg\nDibujos UML", fillcolor="#e5f4e9"];
+  imagenes [label="«componente»\nimagenes/*.svg\nDibujos de calcetines", fillcolor="#e5f4e9"];
+  {rank=same; index; catalogo; diagramas}
+  index -> css; catalogo -> css; diagramas -> css;
+  catalogo -> tienda; tienda -> datos; diagramas -> svg; catalogo -> imagenes; index -> imagenes;
+}

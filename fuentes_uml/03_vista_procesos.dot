@@ -1,0 +1,23 @@
+digraph Proceso {
+  graph [rankdir=TB, fontname="Arial", bgcolor="white", label="Vista de procesos · Compra simulada", labelloc=t, fontsize=21, fontcolor="#23314d", pad=".25", nodesep=".35", ranksep=".44"];
+  node [shape=box, style="rounded,filled", fillcolor="#f0f2fb", color="#7a8baa", fontname="Arial", fontsize=12, margin=".19,.14"];
+  edge [color="#516680", penwidth=1.4, arrowsize=.65, fontname="Arial", fontsize=11];
+  ini [label="Inicio", shape=oval, fillcolor="#def0e6"];
+  ver [label="Cliente filtra y selecciona calcetín"];
+  agregar [label="Agrega productos y talla al carrito"];
+  revisar [label="Revisar disponibilidad de stock", fillcolor="#fff2cf"];
+  calcular [label="Calcular monto total", fillcolor="#fff2cf"];
+  converger [shape=diamond, label="¿Hay stock\nsuficiente?", fillcolor="#ffe5e9", width=2];
+  cambiar [label="Cambiar cantidad o quitar artículo", fillcolor="#faecec"];
+  confirmar [label="Ingresar nombre de ejemplo\ny confirmar pedido"];
+  guardar [label="Generar ID de pedido\ny guardar resumen localmente", fillcolor="#dfeef8"];
+  descontar [label="Descontar stock del catálogo\ny vaciar carrito"];
+  fin [shape=oval, label="Fin: mostrar comprobante\nde prueba", fillcolor="#def0e6"];
+  ini -> ver -> agregar;
+  agregar -> revisar; agregar -> calcular;
+  revisar -> converger; calcular -> converger;
+  converger -> cambiar [label="No"];
+  cambiar -> agregar;
+  converger -> confirmar [label="Sí"];
+  confirmar -> guardar -> descontar -> fin;
+}

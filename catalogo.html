@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo interactivo Sockbuster: calcetines, tallas, carrito y reseñas.">
+  <title>Sockbuster | Catálogo</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</head>
+<body>
+  <header class="encabezado"><div class="contenedor barra"><a class="marca" href="index.html"><span class="marca-figura">S<span class="marca-punto">.</span></span><span>SOCKBUSTER<small>VIDEO & SOCKS</small></span></a><nav aria-label="Navegación principal"><a href="index.html">Inicio</a><a class="activo" href="catalogo.html">Catálogo</a><a href="diagramas.html">Diagramas 4+1</a></nav><a class="enlace-carrito" href="#seccion-carrito">Carrito <span id="contador-carrito">(0)</span></a></div></header>
+  <main class="contenedor catalogo-principal">
+    <div class="cabecera-pagina"><span class="sobrelinea">COLECCIÓN SOCKBUSTER</span><h1>Calcetines con <em>carácter.</em></h1><p>Elige tus favoritos, filtra los modelos y simula tu pedido.</p></div>
+    <div class="aviso" role="note">Proyecto de demostración: los productos, el pago, las reseñas y la administración son simulados. No ingreses datos personales reales.</div>
+    <div class="catalogo-layout">
+      <section aria-label="Lista de productos">
+        <div class="filtros"><label>Buscar modelo<input type="search" id="buscar" placeholder="Ej. Galaxia"></label><label>Colección<select id="filtro-categoria"><option value="Todas">Todas las colecciones</option><option value="Ciencia ficción">Ciencia ficción</option><option value="Terror 80s">Terror 80s</option><option value="Series de drama">Series de drama</option><option value="Animación">Animación</option></select></label><label>Talla<select id="filtro-talla"><option value="Todas">Todas</option><option value="S">S</option><option value="M">M</option><option value="L">L</option></select></label></div>
+        <div class="lista-encabezado"><h2>Nuestros modelos</h2><span id="contador-productos">6 modelos</span></div>
+        <div id="productos" class="productos-grid" aria-live="polite"></div>
+        <p id="sin-productos" class="sin-productos oculto">No encontramos productos con esos filtros.</p>
+      </section>
+      <aside id="seccion-carrito" class="carrito-panel" aria-labelledby="titulo-carrito"><div class="carrito-cabeza"><h2 id="titulo-carrito">Tu carrito</h2><span id="total-articulos">0 artículos</span></div><div id="items-carrito" class="items-carrito"></div><div class="carrito-total"><span>Total</span><strong id="total-carrito">$0</strong></div><label>Nombre para el pedido de prueba<input type="text" id="nombre-pedido" maxlength="45" placeholder="Nombre de ejemplo"></label><button class="boton boton-primario ancho" id="finalizar">Simular compra ↗</button><p class="ayuda">No se cobra dinero ni se pide tarjeta.</p><div id="resultado-pedido" role="status" class="resultado-pedido oculto"></div></aside>
+    </div>
+    <section class="extras-demo" aria-labelledby="titulo-resenas"><div class="extras-titulo"><span class="sobrelinea">OPINIONES DE FANÁTICOS</span><h2 id="titulo-resenas">Reseñas de productos</h2><p>Crea un perfil de ejemplo y luego escribe tu opinión. Los datos solo quedan guardados en tu navegador.</p></div><div class="perfil-resena"><label>Nombre de tu perfil de prueba<input id="perfil-nombre" type="text" maxlength="35" placeholder="Ej. Fan del cine"></label><button class="boton boton-secundario" id="guardar-perfil">Crear perfil demo</button><strong id="perfil-actual">Sin perfil demo</strong></div><div id="panel-resenas" class="panel-resenas"><p>Selecciona «Ver reseñas» en un producto para ver y escribir comentarios.</p></div></section>
+    <section class="administracion" aria-labelledby="admin-titulo"><details><summary><span id="admin-titulo">Administración de inventario (demostración)</span><span>+</span></summary><p class="aviso aviso-chico">Modo demostración sin contraseña real. Para un sitio comercial se necesitaría un servidor con autenticación segura y tokens JWT.</p><div class="admin-contenido"><form id="form-producto" class="form-producto"><h3>Agregar un calcetín</h3><label>Nombre<input id="nuevo-nombre" required maxlength="45" placeholder="Ej. Cine antiguo"></label><label>Película o serie inspiradora<input id="nuevo-inspiracion" required maxlength="55" placeholder="Ej. cine clásico (sin marca)"></label><label>Colección<select id="nuevo-categoria"><option>Ciencia ficción</option><option>Terror 80s</option><option>Series de drama</option><option>Animación</option></select></label><label>Precio (CLP)<input id="nuevo-precio" required type="number" min="500" max="100000" value="5990"></label><label>Stock<input id="nuevo-stock" required type="number" min="0" max="10000" value="10"></label><button class="boton boton-primario" type="submit">Agregar producto</button></form><div class="admin-lista"><h3>Cambiar precio o stock</h3><div id="tabla-admin"></div><button id="reiniciar-demo" type="button" class="boton boton-secundario">Restablecer productos de ejemplo</button></div></div></details></section>
+  </main>
+  <footer class="pie"><div class="contenedor pie-interior"><strong>SOCKBUSTER <span>✦</span></strong><p>Prototipo educativo. La compra es simulada.</p><span>INACAP · 2026</span></div></footer>
+</body>
+</html>

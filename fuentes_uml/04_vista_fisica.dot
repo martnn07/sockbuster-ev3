@@ -1,0 +1,17 @@
+digraph Despliegue {
+  graph [rankdir=LR, fontname="Arial", bgcolor="white", label="Vista física · Despliegue del prototipo y mejora futura", labelloc=t, fontsize=19, fontcolor="#23314d", pad=".3", nodesep=".5", ranksep=".9", compound=true];
+  node [shape=box, style="rounded,filled", fillcolor="#f0f3fb", color="#7f8da6", fontname="Arial", fontsize=13, margin=".24,.19"];
+  edge [color="#526781", penwidth=1.3, fontname="Arial", fontsize=12];
+  navegador [label="«dispositivo»\nNavegador del cliente\n(PC o teléfono)", fillcolor="#ffe9f1"];
+  local [label="localStorage\nDatos solo en este navegador", fillcolor="#e8f4e5"];
+  github [label="«nodo»\nGitHub Pages (hosting)\nArchivos HTML, CSS, JS y SVG", fillcolor="#e7edfe"];
+  navegador -> github [label="HTTPS\nconsulta el sitio", dir=both];
+  navegador -> local [label="guarda / lee", dir=both];
+  subgraph cluster_futuro {
+    label="Ampliación futura (NO implementada en este prototipo)"; color="#bf8697"; style="dashed,rounded"; fontcolor="#b14f72";
+    api [label="«servidor»\nAPI y autenticación JWT", fillcolor="#fff1e7"];
+    bd [label="«base de datos»\nUsuarios, pedidos, stock", fillcolor="#fff1e7"];
+    api -> bd [label="consultas"];
+  }
+  navegador -> api [style=dashed, label="HTTPS + token JWT\n(en proyecto real)", constraint=false];
+}

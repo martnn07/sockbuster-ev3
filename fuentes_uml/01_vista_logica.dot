@@ -1,0 +1,15 @@
+digraph Logica {
+  graph [rankdir=LR, fontname="Arial", bgcolor="white", ranksep="1.05", nodesep=".65", pad=".23", label="Vista lógica · Diagrama de clases UML", labelloc=t, fontsize=21, fontcolor="#23314d"];
+  node [shape=plain, fontname="Arial"];
+  edge [dir=none, color="#566983", penwidth=1.4, fontname="Arial", fontsize=12, fontcolor="#344563"];
+  Usuario [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#ffffff"><TR><TD BGCOLOR="#e7e8fa"><B>Usuario</B></TD></TR><TR><TD ALIGN="LEFT">id: texto<BR ALIGN="LEFT"/>nombre: texto<BR ALIGN="LEFT"/>rol: texto</TD></TR><HR/><TR><TD ALIGN="LEFT">crearPerfil()<BR ALIGN="LEFT"/>publicarReseña()</TD></TR></TABLE>>];
+  Calcetin [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#ffffff"><TR><TD BGCOLOR="#ffe3ed"><B>Calcetin</B></TD></TR><TR><TD ALIGN="LEFT">id: texto<BR ALIGN="LEFT"/>nombre: texto<BR ALIGN="LEFT"/>categoria: texto<BR ALIGN="LEFT"/>precio: numero<BR ALIGN="LEFT"/>stock: numero<BR ALIGN="LEFT"/>tallas: lista</TD></TR><HR/><TR><TD ALIGN="LEFT">filtrar()<BR ALIGN="LEFT"/>actualizarStock()</TD></TR></TABLE>>];
+  Pedido [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#ffffff"><TR><TD BGCOLOR="#e4f2ea"><B>Pedido</B></TD></TR><TR><TD ALIGN="LEFT">codigo: texto<BR ALIGN="LEFT"/>fecha: fecha<BR ALIGN="LEFT"/>total: numero</TD></TR><HR/><TR><TD ALIGN="LEFT">calcularTotal()<BR ALIGN="LEFT"/>generarResumen()</TD></TR></TABLE>>];
+  DetallePedido [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#ffffff"><TR><TD BGCOLOR="#fff0d8"><B>DetallePedido</B></TD></TR><TR><TD ALIGN="LEFT">cantidad: numero<BR ALIGN="LEFT"/>talla: texto<BR ALIGN="LEFT"/>precioUnitario: numero</TD></TR><HR/><TR><TD ALIGN="LEFT">obtenerSubtotal()</TD></TR></TABLE>>];
+  Resena [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6" BGCOLOR="#ffffff"><TR><TD BGCOLOR="#eef0f8"><B>Resena</B></TD></TR><TR><TD ALIGN="LEFT">estrellas: numero (1 a 5)<BR ALIGN="LEFT"/>comentario: texto</TD></TR><HR/><TR><TD ALIGN="LEFT">publicar()</TD></TR></TABLE>>];
+  Usuario -> Pedido [taillabel="1", headlabel="0..*", label="realiza", labeldistance=2];
+  Pedido -> DetallePedido [taillabel="1", headlabel="1..*", label="contiene", labeldistance=2];
+  DetallePedido -> Calcetin [taillabel="0..*", headlabel="1", label="corresponde a", labeldistance=2];
+  Usuario -> Resena [taillabel="1", headlabel="0..*", label="escribe", labeldistance=2];
+  Resena -> Calcetin [taillabel="0..*", headlabel="1", label="opina sobre", labeldistance=2];
+}
