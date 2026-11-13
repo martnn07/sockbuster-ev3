@@ -4,7 +4,7 @@
 
 **Estudiante(s):** [Martín Trujillo]
 
-**Sitio publicado:** PENDIENTE — reemplazar esta línea por el enlace directo de GitHub Pages (ejemplo de formato: `https://TU-USUARIO.github.io/sockbuster-ev3/`).
+**Sitio publicado:** https://martnn07.github.io/sockbuster-ev3/ 
 
 ## ¿De qué trata?
 
@@ -52,7 +52,3 @@ HTML, CSS y JavaScript simple. El navegador guarda los datos de ejemplo con `loc
 7. Revisa las cinco vistas en `Diagramas 4+1`.
 
 **Importante sobre los datos:** Los cambios guardados en un navegador no se comparten con otras personas ni equipos. El perfil de prueba NO tiene contraseña ni autenticación real. No ingreses datos personales reales.
-
-## Cómo publicar
-
-Lee `GUIA_PASO_A_PASO.md`. Cuando el sitio ya esté publicado, edita la línea **Sitio publicado** de este README para dejar el enlace real. La evaluación pide entregar **solo la URL pública del repositorio**, y desde el README debe poderse abrir la página publicada.
